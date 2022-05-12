@@ -1,5 +1,5 @@
 {
-    "name": "ultramsg-sdk",
+    "name": "ultramsg-whatsapp-api",
     "version": "1.0.0",
     "description": "Lightweight library for WhatsApp API to send the whatsappp messages in nodejs provided by ultramsg.com",
     "main": "index.js",
@@ -9,6 +9,13 @@
         "whatsapp-chat",
         "whatsapp-api-nodejs"
     ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ultramsg/whatsapp-nodejs-sdk.git"
+    },
+    "bugs": {
+        "url": "https://github.com/ultramsg/whatsapp-nodejs-sdk/issues"
+    },
     "author": "ultramsg <info@ultramsg.com> (http://ultramsg.com)",
     "license": "MIT",
     "homepage": "http://ultramsg.com/",
