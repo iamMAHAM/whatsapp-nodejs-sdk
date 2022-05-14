@@ -192,7 +192,7 @@ Max length : 4096 char
 
 ```js 
 var to="put_your_mobile_number_here"; 
-var vcard="BEGIN:VCARD
+var vcard=`BEGIN:VCARD
 VERSION:3.0
 N:lastname;firstname
 FN:firstname lastname
@@ -203,7 +203,7 @@ X-GENDER:M
 NOTE:note
 ADR;TYPE=home
 ADR;TYPE=work
-END:VCARD"; 
+END:VCARD`; 
 const response = await api.sendVcardMessage(to,vcard);
 console.log(response)
 ```
