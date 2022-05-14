@@ -190,8 +190,21 @@ class ultramsg {
         }
         const response = await fetch(url, options);
         if (response.ok) {
-            const data = await response.json();
-            return data
+            const contentType = response.headers.get("content-type");
+            if (contentType.includes("application/json")) {
+                const data = await response.json();
+                return data
+            } else {
+                if (contentType.includes("text/plain")) {
+                    const data = await response.text();
+                    return data
+                } else {
+                    const buffer = Buffer.from(await response.arrayBuffer()).toString('base64')
+                    const data = `data:${contentType};base64,${buffer}`
+                    return data
+                }
+            }
+
         } else {
             if (response.status == 404) {
                 return { error: "instance not found or pending please check you instance id" };
