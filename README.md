@@ -207,6 +207,23 @@ END:VCARD`;
 const response = await api.sendVcardMessage(to,vcard);
 console.log(response)
 ```
+## Resend messages by status 
+* **status** : unsent or expired
+
+```js  
+var status="expired"; 
+const response = await api.resendByStatus(status);
+console.log(response)
+```
+## Resend message by ID 
+* **id** : message id
+
+```js  
+var id="123"; 
+const response = await api.resendById(id);
+console.log(response)
+```
+
 
 ## Get Messages
 get the messages that sent by api
